@@ -1,1 +1,9 @@
 {{ printThis }}
+
+<div class="card-deck">
+  <div class="card-block" *ngFor="let media of mediaArray">
+      <img class="card-img-top" [src]="mediaService.mediaURL + media.thumbnail">
+      <h4 class="card-title">Title</h4>
+      <p class="card-text">Description</p>
+  </div>
+  </div>

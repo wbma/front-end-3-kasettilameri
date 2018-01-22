@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ListMediaComponent } from './list-media/list-media.component';
 import {HttpClientModule} from '@angular/common/http';
 import {MediaService} from './services/media.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {MediaService} from './services/media.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [MediaService],
   bootstrap: [AppComponent]
