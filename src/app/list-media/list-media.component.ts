@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MediaService} from '../services/media.service';
+import { MediaService } from '../services/media.service';
+import { DigitransitService } from '../services/digitransit.service';
 
 
 @Component({
@@ -12,7 +13,9 @@ export class ListMediaComponent implements OnInit {
   printThis: string;
   mediaArray: any;
 
-  constructor(public mediaService: MediaService) {
+  stopArray: any;
+
+  constructor(public mediaService: MediaService, private digitransitService: DigitransitService) {
   }
 
   ngOnInit() {
@@ -32,6 +35,11 @@ export class ListMediaComponent implements OnInit {
         media.thumbnail = thumbName;
       });
     });
+
+    console.log(this.digitransitService.getRoutes('Gransinmäki').subscribe(response => {
+      //console.log(response['data'].stops);
+      this.stopArray = response['data'].stops[0].patterns;
+    }));
   }
 
 }
