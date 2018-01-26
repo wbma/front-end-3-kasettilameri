@@ -9,7 +9,7 @@
 <div class="card-deck">
   <ul>
     <li class="card-block" *ngFor="let stops of stopArray">
-      <p *ngFor="let i of stop.patterns"> {{ i.route.longName + "bus #: " + i.route.shortName }}</p>
+      <p *ngFor="let i of stops.patterns"> {{ "Bus #: " + i.route.shortName + " --- " + i.route.longName }}</p>
     </li>
   </ul>
 </div>
