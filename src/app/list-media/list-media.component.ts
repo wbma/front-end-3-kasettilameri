@@ -36,9 +36,9 @@ export class ListMediaComponent implements OnInit {
       });
     });
 
-    console.log(this.digitransitService.getRoutes('Gransinmäki').subscribe(response => {
+    console.log(this.digitransitService.getRoutes('Talouskeskus').subscribe(response => {
       //console.log(response['data'].stops);
-      this.stopArray = response['data'].stops[0].patterns;
+      this.stopArray = response['data'].stops;
     }));
   }
 
